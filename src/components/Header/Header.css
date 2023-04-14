@@ -1,0 +1,23 @@
+.header {
+    height: 100px;
+}
+
+
+.menu-header ul {
+    list-style-type: none;
+    padding: 0;
+
+
+}
+
+.menu-header ul li {
+    color: #FFF;
+    margin: 10px;
+    display: inline-block;
+    text-decoration: none;
+    transition: background .4s;
+}
+
+.menu-header ul li:hover {
+    color:#bd93f9;
+}
