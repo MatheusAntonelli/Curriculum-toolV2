@@ -1,8 +1,8 @@
 #root {
   margin: 0 auto;
-  text-align: center;
   width: 100%;
   height: 100%;
+  text-align: center;
 }
 
 .main-section {
@@ -48,4 +48,30 @@ text-decoration: none;
 .footer-link:hover {
   text-decoration: underline;
   color: #a59ca1;
+}
+
+.input-container {
+}
+
+.input-container input {
+  display: block;
+  margin: 10px;
+  height: 35px;
+  width: 20%;
+  padding: .75rem;
+  text-align: center;
+  margin: auto;
+  margin-block: 1rem;
+}
+
+.input-container textarea {
+  width: 50%;
+  text-align: center;
+  display: block;
+  margin: auto;
+  margin-block: 1rem;
+}
+
+.btns {
+  margin: 10px;
 }
