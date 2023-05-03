@@ -7,6 +7,19 @@ function PersonalInfo() {
 
     const  [inputValue, setInputValue] = useState('')
     const [step, setStep] = useState(1);
+    const [numInputs, setNumInputs] = useState(1);
+
+    const inputGenerator = () => {
+      setNumInputs(numInputs + 1);
+    }
+
+    const renderInputs = () => {
+      const inputs = [];
+      for (let i = 0; i < numInputs; i++) {
+        inputs.push(<input key={i} type="text" placeholder={`Input ${i+1}`} />)
+      }
+      return inputs;
+    }
 
     const handleNext = ( ) => {
       setStep(step + 1 );
@@ -43,7 +56,23 @@ function PersonalInfo() {
       return(
         <div className='input-container'>
           <h1>Formação acadêmica</h1>
-          in
+          <input type="text" name="" id="" placeholder='Curso'/>
+          <p>Concluido? <input type="checkbox" name="" id="" /></p>
+          <input type="month" name="" id="" />
+          <Button color='purple' className='btns' onClick={handleBack }>Voltar</Button>
+          <Button color='purple' className='btns' onClick={handleNext}>Proximo passo</Button>
+        </div>
+      )
+    }
+
+    const renderStep4 = () => {
+      return(
+        <div className="input-container">
+          <h1>Qualificações e Cursos Complementares</h1>
+          {renderInputs()}
+            <Button color='' className='btns' onClick={inputGenerator}>Mais qualificações?</Button>
+            <Button color='purple' className='btns' onClick={handleBack }>Voltar</Button>
+          <Button color='purple' className='btns' onClick={handleNext}>Finalizar Curriculo</Button>
         </div>
       )
     }
@@ -57,6 +86,8 @@ function PersonalInfo() {
     <div>
       {step === 1 && renderStep1()}
       {step === 2 && renderStep2()}
+      {step === 3 && renderStep3()}
+      {step === 4 && renderStep4()}
     </div>
   )
 }
